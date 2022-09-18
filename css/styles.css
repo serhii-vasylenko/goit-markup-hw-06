@@ -319,6 +319,10 @@ body {
     border-radius: 4px;
 }
 
+.subscribe-wrapper input:hover {
+    outline: 1px solid var(--first-bg-color);
+}
+
 .subscribe-wrapper .button {
     align-self: flex-end;
 }
@@ -778,6 +782,7 @@ body {
 
     outline-color: transparent;
     transition: outline-color var(--transition-duration-timing);
+    transition: border-color var(--transition-duration-timing);
 }
 
 .form-field .form-input {
@@ -787,6 +792,13 @@ body {
 .form-field:focus-within .form-input,
 .form-field:focus-within .text-field {
     outline-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.form-field .form-input:hover,
+.form-field .text-field:hover {
+    border-color: var(--accent-color);
+    outline: 1px solid var(--accent-color);
     cursor: pointer;
 }
 
@@ -822,7 +834,7 @@ body {
     transition: fill var(--transition-duration-timing);
 }
 
-.form-field .form-input:focus + .icon {
+:is(.form-field .form-input:focus, .form-field .form-input:hover) + .icon {
     fill: var(--accent-color);
 }
 
@@ -850,9 +862,11 @@ body {
     height: 15px;
 
     transition: opacity var(--transition-duration-timing);
+    transition: outline var(--transition-duration-timing);
 }
 
 .form-agreement .icon:hover {
+    outline: 1px solid var(--third-text-color);
     cursor: pointer;
 }
 
